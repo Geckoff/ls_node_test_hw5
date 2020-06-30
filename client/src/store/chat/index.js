@@ -66,7 +66,7 @@ export default combineReducers({
 export const connectSocket = () => (dispatch, getState) => {
 	const userProfile = userProfileSelector(getState());
 	const port = window.location.port ? `:${window.location.port}` : "";
-	socket = socketIO(`http://${window.location.hostname}${port}`);
+	socket = socketIO(`${window.location.protocol}//${window.location.hostname}${port}`);
 
 	socket.emit("users:connect", { userId: userProfile.id, username: userProfile.username });
 

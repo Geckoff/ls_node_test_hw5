@@ -6,7 +6,8 @@
 		"node": "12.x"
 	},
 	"scripts": {
-		"start": "node app.js"
+		"start": "node app.js",
+		"heroku-postbuild": "cd client && npm install && npm run build"
 	},
 	"dependencies": {
 		"@hapi/joi": "^17.1.1",
